@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
+	  raise params.inspect
 	  @post = Post.new
 	  @post.title = params[:title]
 	  @post.description = params[:description]
