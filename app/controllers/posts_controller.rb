@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
+	  #raise params.inspect
 	  @post = Post.new
 	  @post.title = params[:title]
 	  @post.description = params[:description]
@@ -24,8 +25,9 @@ class PostsController < ApplicationController
 	end
 
 	def update
+	  #raise params.inspect
 	  @post = Post.find(params[:id])
-	  @post.update(title: params[:title], description: params[:description])
+	  @post.update(title: params[:post][:title], description: params[:post][:description])
 	  redirect_to post_path(@post)
 	end
 end
